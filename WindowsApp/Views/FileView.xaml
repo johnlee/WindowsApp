@@ -11,10 +11,10 @@
             <ColumnDefinition Width="523*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="lbInput" ItemsSource="{Binding Results}" HorizontalAlignment="Left" Height="244" Margin="10,96,0,0" VerticalAlignment="Top" Width="402"/>
+        <ListBox x:Name="lb1" ItemsSource="{Binding Results}" HorizontalAlignment="Left" Height="244" Margin="10,96,0,0" VerticalAlignment="Top" Width="402"/>
         <Label x:Name="lbl2" Content="Result" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
         <Label x:Name="lbl1" Content="Load File" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
-        <TextBox x:Name="tbResults" Text="{Binding FilePath, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="11,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319"/>
-        <Button x:Name="btnLoad" Command="{Binding LoadFile}" Content="Load" HorizontalAlignment="Left" Margin="340,36,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="tb1" Text="{Binding FilePath, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="11,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319"/>
+        <Button x:Name="btn1" Command="{Binding LoadFile}" Content="Load" HorizontalAlignment="Left" Margin="340,36,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>
