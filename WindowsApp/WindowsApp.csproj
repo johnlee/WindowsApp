@@ -55,19 +55,54 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ApiView.xaml.cs">
+      <DependentUpon>ApiView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ApiViewModel.cs" />
+    <Compile Include="ViewModels\NavigationViewModel.cs" />
+    <Compile Include="ViewModels\RegistryViewModel.cs" />
+    <Compile Include="ViewModels\SchedulerViewModel.cs" />
+    <Compile Include="Views\RegistryView.xaml.cs">
+      <DependentUpon>RegistryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SchedulerView.xaml.cs">
+      <DependentUpon>SchedulerView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ApiView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\FileModel.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="ViewModels\Common\Command.cs" />
+    <Compile Include="ViewModels\FileViewModel.cs" />
+    <Compile Include="ViewModels\Common\ObservableObject.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\FileView.xaml.cs">
+      <DependentUpon>FileView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\RegistryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SchedulerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -97,7 +132,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{bac364b8-19ad-4b7e-b6f1-5bdb91e4cc9b}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

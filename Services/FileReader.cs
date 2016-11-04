@@ -7,7 +7,7 @@ namespace Services
     public static class FileReader
     {
         // Gets contents of file if it 'seems' file is not binary
-        public static string GetNonBinaryFileContents(string path)
+        public static string GetNonBinaryContents(string path)
         {
             string contents = String.Empty;
 
@@ -23,6 +23,13 @@ namespace Services
             }
 
             return contents;
+        }
+
+        public static DateTime GetModifiedTime(string path)
+        {
+            // TODO: 
+
+            return DateTime.Now;
         }
 
         // Check if given string may have binary characters

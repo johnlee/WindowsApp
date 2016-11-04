@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace WindowsApp.Models
+namespace WindowsApp
 {
     public class FileModel : INotifyPropertyChanged
     {
