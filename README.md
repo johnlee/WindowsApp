@@ -4,14 +4,15 @@ Testing various features on a Windows App
 :memo: The following features are included in this example:
 
 - [ ] Using WPF, .Net 4.5+
-- [ ] Main window loads content from JSON
-- [ ] Main window has button to open form
-- [ ] Form window for submitting data
 - [ ] Use of MVVM
+- [ ] Main window 
+- [ ] File View
+- [ ] Registry View
+- [ ] Task Scheduler View
 - [ ] Basic styling and templates
-- [ ] Reading from registry
-- [ ] Reading from task scheduler
-- [ ] Reading from file system
+- [ ] Interacting with the Registry
+- [ ] Interacting with Task Scheduler
+- [ ] Interacting with File System
 
 ## WPF Overview
 
