@@ -1,46 +1,24 @@
-﻿using System.ComponentModel;
+﻿using Services;
+using System;
+using System.ComponentModel;
 
 namespace WindowsApp
 {
-    public class FileModel : INotifyPropertyChanged
+    public class FileModel
     {
         private string _filePath;
-        private string _fileContents;
 
-        public string FilePath
+        public FileModel(string filePath)
         {
-            get
+            _filePath = filePath;
+            if(FileReader.Exists(filePath))
             {
-                return _filePath;
-            }
-            set
-            {
-                _filePath = value;
-                RaisePropertyChanged("FilePath");
+                FileContents = FileReader.GetNonBinaryContents(filePath);
+                ModifiedDate = FileReader.GetModifiedTime(filePath);
             }
         }
         
-        public string FileContents
-        {
-            get
-            {
-                return _fileContents;
-            }
-            set
-            {
-                _fileContents = value;
-                RaisePropertyChanged("FileContents");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void RaisePropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
-        }
+        public string FileContents { get; set; }
+        public DateTime ModifiedDate { get; set; }
     }
 }

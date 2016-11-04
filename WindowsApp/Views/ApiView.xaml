@@ -5,8 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WindowsApp"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="350" Width="425">
     <Grid>
-        <TextBlock Text="Api"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="523*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="lbInput" HorizontalAlignment="Left" Height="244" Margin="10,96,0,0" VerticalAlignment="Top" Width="402"/>
+        <Label x:Name="lbl2" Content="Result" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
+        <Label x:Name="lbl1" Content="Api Url" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
+        <TextBox x:Name="tbResults" HorizontalAlignment="Left" Height="23" Margin="11,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="324"/>
+        <Button x:Name="btnLoad" Content="Load" HorizontalAlignment="Left" Margin="340,36,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>

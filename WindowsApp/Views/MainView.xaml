@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindowsApp"
         mc:Ignorable="d"
-        Title="Windows App" Height="400" Width="525">
+        Title="Windows App" Height="400" Width="555">
     <Window.Resources>
         <DataTemplate DataType="{x:Type local:FileViewModel}">
             <local:FileView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type local:ApiViewModel}">
+            <local:ApiView />
+        </DataTemplate>        
         <DataTemplate DataType="{x:Type local:RegistryViewModel}">
             <local:RegistryView />
         </DataTemplate>

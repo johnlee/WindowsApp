@@ -1,10 +1,7 @@
-﻿using Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Input;
 
 namespace WindowsApp
@@ -24,28 +21,30 @@ namespace WindowsApp
             }
         }
 
-        public IEnumerable<string> Results
-        {
-            get { return _results; }
-        }
-
         public ICommand LoadFile
         {
             get { return new Command(LoadFileIntoResults); }
         }
 
+        public IEnumerable<string> Results
+        {
+            get { return _results; }
+        }
+
         // Delegate method definitions
+        #region Delegates
+
         private void LoadFileIntoResults()
         {
             if (string.IsNullOrEmpty(FilePath))
             {
                 return;
             }
-            string fileContents = FileReader.GetNonBinaryContents(_filePath);
-            DateTime fileModified = FileReader.GetModifiedTime(_filePath);
-            _results.Add("File Last Modified: " + fileModified.ToString());
-            _results.Add("File Contents: ");
-            _results.Add(fileContents);
+            FileModel model = new FileModel(FilePath);
+            _results.Add("Last Modified: " + model.ModifiedDate.ToString());
+            _results.Add("Contents: " + model.FileContents);
         }
+
+        #endregion
     }
 }

@@ -5,14 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WindowsApp"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="525">
+             d:DesignHeight="350" Width="425">
     <Grid>
-        <ListBox x:Name="lb2" HorizontalAlignment="Left" Height="234" Margin="10,96,0,0" VerticalAlignment="Top" Width="497"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="523*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="lbInput" ItemsSource="{Binding Results}" HorizontalAlignment="Left" Height="244" Margin="10,96,0,0" VerticalAlignment="Top" Width="402"/>
         <Label x:Name="lbl2" Content="Result" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
-        <Label x:Name="lbl1" Content="Load File" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
-        <TextBox x:Name="tb1" HorizontalAlignment="Left" Height="23" Margin="10,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345"/>
-        <Button x:Name="btnBrowse" Content="Browse" HorizontalAlignment="Left" Margin="360,42,0,0" VerticalAlignment="Top" Width="70"/>
-        <Button x:Name="btnMain" Content="Main" HorizontalAlignment="Left" Margin="432,335,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnLoad" Content="Load" HorizontalAlignment="Left" Margin="435,42,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lbl1" Content="Load File" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
+        <TextBox x:Name="tbResults" Text="{Binding FilePath, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="11,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319"/>
+        <Button x:Name="btnLoad" Command="{Binding LoadFile}" Content="Load" HorizontalAlignment="Left" Margin="340,36,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>
