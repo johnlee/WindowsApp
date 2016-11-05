@@ -15,7 +15,7 @@ namespace WindowsApp.Models
         {
             _apiUrl = apiUrl;
             DataType = "JSON";
-            DataContent = JSONReader.GetJSONFromUrl(apiUrl);
+            DataContent = WebService.GetWebResponse(apiUrl);
         }
 
         public string DataContent { get; set; }

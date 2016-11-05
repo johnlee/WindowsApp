@@ -12,6 +12,7 @@ namespace WindowsApp
     {
         private object selectedViewModel;
 
+        public ICommand btnBindingView { get; set; }
         public ICommand btnApiView { get; set; }
         public ICommand btnFileView { get; set; }
         public ICommand btnRegistryView { get; set; }
@@ -32,10 +33,17 @@ namespace WindowsApp
 
         public NavigationViewModel()
         {
+            btnBindingView = new Command(ShowBindingView);
             btnFileView = new Command(ShowFileView);
             btnApiView = new Command(ShowAPIView);
             btnRegistryView = new Command(ShowRegistryView);
             btnSchedulerView = new Command(ShowSchedulerView);
+        }
+
+        // Bind the views to the content panel
+        private void ShowBindingView()
+        {
+            SelectedViewModel = new BindingViewModel();
         }
 
         private void ShowFileView()

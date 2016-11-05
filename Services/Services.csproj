@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileReader.cs" />
-    <Compile Include="JSONReader.cs" />
+    <Compile Include="FileService.cs" />
+    <Compile Include="WebService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

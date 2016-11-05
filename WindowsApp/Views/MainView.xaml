@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Windows App" Height="400" Width="555">
     <Window.Resources>
+        <DataTemplate DataType="{x:Type local:BindingViewModel}">
+            <local:BindingView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type local:FileViewModel}">
             <local:FileView />
         </DataTemplate>
@@ -22,6 +25,7 @@
     </Window.Resources>
     <DockPanel LastChildFill="True">
         <StackPanel x:Name="navigation" DockPanel.Dock="Left">
+            <Button Content="2WBind" Command="{Binding btnBindingView}"></Button>
             <Button Content="File" Command="{Binding btnFileView}"></Button>
             <Button Content="API" Command="{Binding btnApiView}"></Button>
             <Button Content="Registry" Command="{Binding btnRegistryView}"></Button>

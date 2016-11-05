@@ -11,10 +11,10 @@ namespace WindowsApp
         public FileModel(string filePath)
         {
             _filePath = filePath;
-            if(FileReader.Exists(filePath))
+            if(FileService.Exists(filePath))
             {
-                FileContents = FileReader.GetNonBinaryContents(filePath);
-                ModifiedDate = FileReader.GetModifiedTime(filePath);
+                FileContents = FileService.GetNonBinaryContents(filePath);
+                ModifiedDate = FileService.GetModifiedTime(filePath);
             }
         }
         

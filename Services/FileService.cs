@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Services
 {
-    public static class FileReader
+    public static class FileService
     {
         // Checks if file exists
         public static bool Exists(string path)
