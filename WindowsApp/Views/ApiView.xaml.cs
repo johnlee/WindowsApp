@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WindowsApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ApiView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ApiView : UserControl
     {
-        public MainWindow()
+        public ApiView()
         {
             InitializeComponent();
         }
