@@ -11,9 +11,9 @@
             <ColumnDefinition Width="523*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="lbInput" HorizontalAlignment="Left" Height="244" Margin="10,96,0,0" VerticalAlignment="Top" Width="402"/>
         <Label x:Name="lbl2" Content="Result" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
         <Label x:Name="lbl1" Content="Task Scheduler" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
-        <Button x:Name="btnLoad" Content="Load" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnLoad" Command="{Binding Load}" Content="Load" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox x:Name="lbInput" ItemsSource="{Binding Results}" HorizontalAlignment="Left" Height="244" Margin="10,96,0,0" VerticalAlignment="Top" Width="402"/>
     </Grid>
 </UserControl>
